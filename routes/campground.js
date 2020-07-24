@@ -79,6 +79,7 @@ router.get("/campgrounds/:id/edit", middleware.checkCampgroundOwnership ,(req, r
 		 if(err){
 			 console.log(err)
 		 }else{
+			 
 			res.render("campground/edit", {campground: campground}) 
 		 }
 			 
@@ -93,6 +94,7 @@ router.put("/campgrounds/:id", middleware.checkCampgroundOwnership , function(re
 		     if(err){
 				 console.log(err)
 			 }else{
+				 
 				 res.redirect("/campgrounds/" + req.params.id)
 			 }
 	      }

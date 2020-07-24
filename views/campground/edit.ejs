@@ -6,6 +6,16 @@
    </h2>
    <div class="forms">
       <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="post">
+		   
+		  <div class="form-group">
+			 <input class="form-control" type="text" name="campground[contact]" value="<%=campground.contact %>" required>
+		  </div>
+		  
+		  <div class="form-group">
+            
+            <input class="form-control" type="number" name="campground[phone]" value="<%=campground.phone %>" required>
+         </div>
+		  
          <div class="form-group">
             <input class="form-control" type="text" name="campground[name]" value="<%=campground.name %>" required>
          </div>
@@ -14,11 +24,15 @@
          </div>
 		  
          <div class="form-group">
-            <input class="form-control" id="url" type="text" name="campground[img]" value="<%=campground.img%>"required>
+            <input class="form-control" id="url" type="text" name="campground[img]" value="<%=campground.img%>" required>
          </div>
-         <div class="form-group">
-            <input class="form-control" type="text" name="campground[description]" value="<%=campground.description %>" required>
+         
+		  
+		  <div class="form-group">
+            
+            <textarea class="form-control" type="text" name="campground[description]" rows="10"  required><%=campground.description%></textarea>
          </div>
+		  
          <div class="form-group">
             <a id="preview" class="btn btn-lg btn btn-primary btn-block" target="_blank" > 
             Preview
