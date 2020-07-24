@@ -1,0 +1,47 @@
+<%- include("../partials/header") %>
+
+<div class="container main" >
+  <div class="container">
+    <header class="jumbotron" style= "text-align: center;">
+      <h1>
+        <i class="fab fa-gripfire"></i> Welcome To Himalayan Camp
+      </h1>
+      <p>
+       Explore the best campgrounds in the world
+      </p>
+      <p>
+        <a class="btn btn-md btn-primary" href="/campgrounds/new">
+          Add New Cam Ground</a
+        >
+      </p>
+    </header>
+  </div>
+
+  <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+    <% campground.forEach(function(camp){ %>
+    <div class="col-sm-6 col-md-4 campground-card-space">
+      <div class="card">
+		  <a href="/campgrounds/<%= camp.id %>">
+			  <img class="img-fluid" src="<%= camp.img %>" />
+		  </a>
+        
+        <div class="caption">
+          <h4>
+            <%= camp.name %>
+          </h4>
+        </div>
+		  <p>
+			  <a href="/campgrounds/<%= camp.id %>" class="btn btn-primary">Show info</a>
+		  </p>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="">
+    <span class="text-muted">©Yelcamp | <a href="/"> Home </a> | <a href="/campgrounds"> Campgrounds</a></span>
+  </div>
+</footer>
+<%- include("../partials/footer") %>

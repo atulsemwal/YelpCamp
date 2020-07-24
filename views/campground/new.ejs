@@ -1,0 +1,67 @@
+<%- include("../partials/header") %>
+
+<div class="container">
+   <h2 style="text-align: center; margin: 28px 0;">
+      Create a New Campgrounds
+   </h2>
+   <div class="forms">
+     
+      
+      <form action="/campgrounds" method="post">
+         <div class="form-group">
+            <label for="contact"> Contact Person</label>
+            <input class="form-control" type="text" name="contact" placeholder="i.e Lokesh Yadav" required></input>
+         </div>
+         <div class="form-group">
+            <label for="number"> Phone Number</label>
+            <input class="form-control" type="number" name="phone" placeholder="i.e +917776665551" required></input>
+         </div>
+         <div class="form-group">
+            <label for="name">Campground Name</label>
+            <input class="form-control" type="text" name="name" placeholder="i.e. Cloud Ends" required>
+         </div>
+		 <div class="form-group">
+         <label for="price">Price</label>
+            <input class="form-control" type="number" name="price" placeholder="i.e 1000" min="500" step="1" required>
+         </div>
+         <div class="form-group">
+            <label for="image">Image Url</label>
+            <input class="form-control" id="url" type="text" name="image" placeholder="image url" required>
+         </div>
+         <div class="form-group">
+            <label for="location"> Location</label>
+            <input class="form-control" type="text" name="location" placeholder="i.e Old Road, Shenam, Leh - Ladakh, Leh, Jammu and Kashmir 194101
+            " required>
+         </div>
+         <div class="form-group">
+            <label for="description"> Description</label>
+            <textarea class="form-control" type="text" name="description" rows="10" placeholder="description goes here.." required></textarea>
+         </div>
+         
+         <div class="form-group">
+            <a id="preview" class="btn btn-lg btn btn-primary btn-block" target="_blank" > 
+            Preview Image
+            </a>
+         </div>
+         <div class="form-group">
+            <button type="submit" class="btn btn-lg btn btn-primary btn-block">
+            Sumbit!
+            </button>
+         </div>
+   
+   </form>
+</div>
+</div>
+
+<script>
+  document.getElementById("preview").addEventListener("click", function(){
+	  var url = document.getElementById("url").value
+	  if(url == ""){
+		  alert("Please Provide Image Url!")
+		  this.removeAttribute("href");
+	  }else{
+		  this.href = url;
+	  }
+	 })
+</script>
+<%- include("../partials/footer") %>

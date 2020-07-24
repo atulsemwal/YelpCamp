@@ -1,0 +1,48 @@
+<%- include("../partials/header") %>
+
+<div class="container">
+   <h2 style="text-align: center; margin: 28px 0;">
+      Update <%=campground.name %> Campgrounds
+   </h2>
+   <div class="forms">
+      <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="post">
+         <div class="form-group">
+            <input class="form-control" type="text" name="campground[name]" value="<%=campground.name %>" required>
+         </div>
+		  <div class="form-group">
+            <input class="form-control" type="number" name="campground[price]" value="<%=campground.price %>" min="500" step="1" required>
+         </div>
+		  
+         <div class="form-group">
+            <input class="form-control" id="url" type="text" name="campground[img]" value="<%=campground.img%>"required>
+         </div>
+         <div class="form-group">
+            <input class="form-control" type="text" name="campground[description]" value="<%=campground.description %>" required>
+         </div>
+         <div class="form-group">
+            <a id="preview" class="btn btn-lg btn btn-primary btn-block" target="_blank" > 
+            Preview
+            </a>
+         </div>
+         <div class="form-group">
+            <button type="submit" class="btn btn-lg btn btn-primary btn-block">
+            Sumbit!
+            </button>
+         </div>
+   
+   </form>
+</div>
+</div>
+
+<script>
+  document.getElementById("preview").addEventListener("click", function(){
+	  var url = document.getElementById("url").value
+	  if(url == ""){
+		  alert("Please Provide Image Url!")
+		  this.removeAttribute("href");
+	  }else{
+		  this.href = url;
+	  }
+	 })
+</script>
+<%- include("../partials/footer") %>

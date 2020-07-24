@@ -1,0 +1,73 @@
+
+.container.main{
+	margin-top: 2rem;
+}
+
+.forms{
+	width: 43%;
+	margin:28px auto;
+}
+
+
+
+/* //Show.ejs */
+
+.comment_card{
+	margin-top: 1.5rem;
+}
+
+.comment_content{
+	padding: 1.5rem;
+}
+
+ #delete-camp{
+	display: inline;
+}
+
+.delete-comment{
+	display: inline;
+}
+
+
+/* Show Page */
+#campground-name{
+	font-family: 'Righteous', cursive;
+}
+
+.price{
+	text-decoration: underline;
+	font-size: 1.4rem;
+}
+
+/* footer */
+
+
+.footer {
+  background-color: #e9ecef;
+  margin-top: 3rem;
+  text-align: center;
+  padding: 0.7rem;
+}
+
+/* map */
+
+#map{
+	width:100%; 
+	height: 30rem; 
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 600px) {
+ .campground-card-space {
+    margin-top: 2rem;
+  }
+	.forms{
+		width: 80%;
+	}
+
+	#map{
+		height: 12rem;
+	}
+	
+}
